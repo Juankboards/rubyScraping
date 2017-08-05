@@ -1,6 +1,14 @@
 <form action="<%= search_url %>" method="get">
 	<label>Search:
-	<input type="text" name="search">
+		<input type="text" name="search">
+	</label>
+	<label>WebSite:
+		<select name="website" required="">
+		  <option value="sephora" selected="">Sephora</option>
+		  <option value="asos">Asos</option>
+		  <option value="ulta">Ulta</option>
+		  <option value="frends">Frends</option>
+		</select> 
 	</label>
 	
 	<input type="submit" value="Search">

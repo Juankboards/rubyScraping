@@ -1,17 +1,25 @@
-<% 20.times do |id| %>
-	<%= link_to(@results[:link][id], target: "_blank") do %>
-		<p>
-		  <strong>Brand:</strong>
-		  <%= @results[:brand][id] %>
-		</p>
-		<p>
-		  <strong>Name:</strong>
-		  <%= @results[:name][id] %>
-		</p>
-		<p>
-		  <strong>Price:</strong>
-		  <%= @results[:price][id] %>
-		</p>
-		<%= image_tag("https://www.sephora.com#{@results[:img][id]}", alt: @results[:name][id]) %>
+<% if @results[:name].length > 0%>
+	<% 20.times do |id| %>
+		<%= link_to(@results[:link][id], target: "_blank") do %>
+			<% if @results.key?(:brand)%>
+				<p>
+				  <strong>Brand:</strong>
+				  <%= @results[:brand][id] %>
+				</p>
+			<% end %>
+			<p>
+			  <strong>Name:</strong>
+			  <%= @results[:name][id] %>
+			</p>
+			<p>
+			  <strong>Price:</strong>
+			  <%= @results[:price][id] %>
+			</p>
+			<%= image_tag(@results[:img][id], alt: @results[:name][id]) %>
+		<% end %>
 	<% end %>
+<% else%>
+	<p>
+	  <strong>Your search returns no results.</strong>
+	</p>
 <% end %>
