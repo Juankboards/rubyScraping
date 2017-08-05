@@ -1,0 +1,17 @@
+<% 20.times do |id| %>
+	<%= link_to(@results[:link][id], target: "_blank") do %>
+		<p>
+		  <strong>Brand:</strong>
+		  <%= @results[:brand][id] %>
+		</p>
+		<p>
+		  <strong>Name:</strong>
+		  <%= @results[:name][id] %>
+		</p>
+		<p>
+		  <strong>Price:</strong>
+		  <%= @results[:price][id] %>
+		</p>
+		<%= image_tag("https://www.sephora.com#{@results[:img][id]}", alt: @results[:name][id]) %>
+	<% end %>
+<% end %>
