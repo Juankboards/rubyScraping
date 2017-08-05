@@ -10,7 +10,6 @@ class WebScrapingController < ApplicationController
 
 	def index
 	end
-	
 
 	def search()
 		search_without_spaces = params[:search].strip.gsub(/\s+/, "%20")
